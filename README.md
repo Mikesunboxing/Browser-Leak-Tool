@@ -36,4 +36,31 @@ A lightweight PowerShell utility designed to prevent browser DNS leaks, enforce 
 1. Open PowerShell as **Administrator**:
    - Press `Win + X` and select **Terminal (Admin)** or **Windows PowerShell (Admin)**.
 
-2. Copy and paste the script into Powershell as Admin.
+2. Copy and paste the script into Powershell as Admin. Or Download the ps1 file here https://github.com/Mikesunboxing/Browser-Leak-Tool/blob/main/Browser_Leak_Tool.ps1 and run as Admin in Powershell.
+
+
+## How It Works
+
+### Option 1: Apply Policies
+Network Adapters: Scans for active IPv4 adapters (Status = Up).
+
+If DHCP is enabled, it resets DNS server addresses to inherit directly from your router.
+
+If a Static IP is detected, it leaves the configuration untouched.
+
+Registry Hardening: Writes Group Policy keys under HKLM:\SOFTWARE\Policies to turn off internal browser DoH engines and ensure native OS resolver usage.
+
+Cache Refresh: Flushes system-level DNS resolver caches (ipconfig /flushdns).
+
+### Option 2: Remove Policies
+Clears applied registry policy keys for all supported browsers.
+
+Re-enables system default Auto-DoH settings.
+
+Flushes DNS caches and renews DHCP IP leases (ipconfig /renew).
+
+### Option 3: Exit Script
+Now close the Powershell Window
+
+Disclaimer
+Provided for personal or business use. Use at your own risk. Always verify network policies within your organization before applying system-wide registry modifications.
