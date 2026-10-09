@@ -43,8 +43,9 @@ Modern web browsers often bypass local router DNS configurations by utilizing in
 1. Download or clone this repository to your local machine.
 2. Locate `Browser_Leak_Tool_Apply.reg`.
 3. Right-click the file and select **Merge** (or double-click it).
-4. Click **Yes** when prompted by User Account Control (UAC) and accept the Registry Editor confirmation.
-5. Restart your web browsers for the policies to take effect immediately.
+4. IF Windows Smart App Control Blocks it, go to the Downloaded file and right click to show properties and tick unblock.
+5. Click **Yes** when prompted by User Account Control (UAC) and accept the Registry Editor confirmation.
+6. Restart your web browsers for the policies to take effect immediately.
 
 ### Option 2: Verify Policy Status
 
