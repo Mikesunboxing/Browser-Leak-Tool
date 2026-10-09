@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Recommended Secure & Encrypted DNS Providers | Browser Leak Tool</title>
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card-bg: #1e293b;
+      --card-border: #334155;
+      --text: #f8fafc;
+      --text-muted: #94a3b8;
+      --accent: #38bdf8;
+      --accent-hover: #0284c7;
+      --code-bg: #020617;
+      --success: #22c55e;
+      --warning: #eab308;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1000px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 2.5rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 1.5rem;
+    }
+
+    h1 {
+      font-size: 2.25rem;
+      color: #fff;
+      margin-bottom: 0.5rem;
+    }
+
+    .subtitle {
+      color: var(--text-muted);
+      font-size: 1.1rem;
+    }
+
+    .callout {
+      background: rgba(56, 189, 248, 0.1);
+      border-left: 4px solid var(--accent);
+      padding: 1rem 1.25rem;
+      border-radius: 0 8px 8px 0;
+      margin-bottom: 2rem;
+      color: #e2e8f0;
+    }
+
+    .table-container {
+      overflow-x: auto;
+      margin-bottom: 3rem;
+      background: var(--card-bg);
+      border-radius: 12px;
+      border: 1px solid var(--card-border);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 1rem 1.25rem;
+      border-bottom: 1px solid var(--card-border);
+    }
+
+    th {
+      background-color: rgba(0, 0, 0, 0.2);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    tr:last-child td {
+      border-bottom: none;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    }
+
+    .card h3 {
+      color: #fff;
+      font-size: 1.3rem;
+      margin-bottom: 0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .badge {
+      font-size: 0.75rem;
+      padding: 0.25rem 0.5rem;
+      border-radius: 4px;
+      background: rgba(56, 189, 248, 0.2);
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .option-title {
+      color: var(--accent);
+      font-weight: 600;
+      font-size: 0.95rem;
+      margin-top: 1rem;
+      margin-bottom: 0.25rem;
+      display: block;
+    }
+
+    ul {
+      list-style-type: none;
+      margin-bottom: 0.5rem;
+    }
+
+    li {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.25rem;
+    }
+
+    code {
+      background: var(--code-bg);
+      color: #e2e8f0;
+      padding: 0.15rem 0.4rem;
+      border-radius: 4px;
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.85rem;
+      border: 1px solid rgba(255,255,255,0.05);
+    }
+
+    .instructions {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 12px;
+      padding: 2rem;
+      margin-bottom: 3rem;
+    }
+
+    .instructions h2 {
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .instructions ol {
+      padding-left: 1.25rem;
+    }
+
+    .instructions li {
+      color: var(--text);
+      font-size: 1rem;
+      margin-bottom: 0.75rem;
+    }
+
+    .code-block {
+      background: var(--code-bg);
+      border: 1px solid var(--card-border);
+      padding: 1rem;
+      border-radius: 8px;
+      font-family: ui-monospace, monospace;
+      color: #38bdf8;
+      margin-top: 0.5rem;
+      display: block;
+    }
+
+    footer {
+      text-align: center;
+      color: var(--text-muted);
+      font-size: 0.875rem;
+      border-top: 1px solid var(--card-border);
+      padding-top: 2rem;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <h1>Recommended Secure & Encrypted DNS Providers</h1>
+      <p class="subtitle">Official setup & router configuration guide for Browser Leak Tool users</p>
+    </header>
+
+    <div class="callout">
+      <strong>Network Enforcement Notice:</strong> When using the <strong>Browser Leak Tool</strong>, all connected web browsers are restricted from using internal Secure DNS resolvers and are forced to use your system and router network defaults. Use this guide to set a privacy-respecting DNS resolver directly on your router.
+    </div>
+
+    <h2>Quick Comparison Table</h2>
+    <div class="table-container">
+      <table>
+        <thead>
+          <tr>
+            <th>Provider</th>
+            <th>Standard / Unfiltered</th>
+            <th>Security (Malware Block)</th>
+            <th>Family (Malware + Adult Block)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Cloudflare</strong></td>
+            <td><code>1.1.1.1</code> / <code>1.0.0.1</code></td>
+            <td><code>1.1.1.2</code> / <code>1.0.0.2</code></td>
+            <td><code>1.1.1.3</code> / <code>1.0.0.3</code></td>
+          </tr>
+          <tr>
+            <td><strong>Quad9</strong></td>
+            <td><code>9.9.9.10</code> / <code>149.112.112.10</code></td>
+            <td><code>9.9.9.9</code> / <code>149.112.112.112</code></td>
+            <td><em>(N/A - Threat focused)</em></td>
+          </tr>
+          <tr>
+            <td><strong>AdGuard DNS</strong></td>
+            <td><code>94.140.14.140</code> / <code>94.140.14.141</code></td>
+            <td><code>94.140.14.14</code> / <code>94.140.15.15</code> <em>(+ Ads)</em></td>
+            <td><code>94.140.14.15</code> / <code>94.140.15.16</code></td>
+          </tr>
+          <tr>
+            <td><strong>CleanBrowsing</strong></td>
+            <td><em>(N/A)</em></td>
+            <td><code>185.228.168.9</code> / <code>185.228.169.9</code></td>
+            <td><code>185.228.168.168</code> / <code>185.228.169.168</code></td>
+          </tr>
+          <tr>
+            <td><strong>Mullvad DNS</strong></td>
+            <td><code>194.242.2.2</code></td>
+            <td><code>194.242.2.3</code> <em>(+ Ads)</em></td>
+            <td><code>194.242.2.4</code></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h2>Provider Details & Encrypted Protocols</h2>
+    <div class="grid">
+
+      <!-- Cloudflare -->
+      <div class="card">
+        <h3>Cloudflare <span class="badge">1.1.1.1</span></h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Ultra-fast global resolver with strong privacy guarantees.</p>
+
+        <span class="option-title">Option A: Standard / Unfiltered</span>
+        <ul>
+          <li>IPv4: <code>1.1.1.1</code> | <code>1.0.0.1</code></li>
+          <li>DoH: <code>https://cloudflare-dns.com/dns-query</code></li>
+          <li>DoT: <code>one.one.one.one</code></li>
+        </ul>
+
+        <span class="option-title">Option B: Malware Protection</span>
+        <ul>
+          <li>IPv4: <code>1.1.1.2</code> | <code>1.0.0.2</code></li>
+          <li>DoT: <code>security.cloudflare-dns.com</code></li>
+        </ul>
+
+        <span class="option-title">Option C: Family Protection</span>
+        <ul>
+          <li>IPv4: <code>1.1.1.3</code> | <code>1.0.0.3</code></li>
+          <li>DoT: <code>family.cloudflare-dns.com</code></li>
+        </ul>
+      </div>
+
+      <!-- Quad9 -->
+      <div class="card">
+        <h3>Quad9 <span class="badge">Swiss Non-Profit</span></h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Non-profit intelligence-driven threat blocking.</p>
+
+        <span class="option-title">Option A: Malware Protection (Default)</span>
+        <ul>
+          <li>IPv4: <code>9.9.9.9</code> | <code>149.112.112.112</code></li>
+          <li>IPv6: <code>2620:fe::fe</code> | <code>2620:fe::9</code></li>
+          <li>DoH: <code>https://dns.quad9.net/dns-query</code></li>
+          <li>DoT: <code>dns.quad9.net</code></li>
+        </ul>
+
+        <span class="option-title">Option B: Unfiltered Standard</span>
+        <ul>
+          <li>IPv4: <code>9.9.9.10</code> | <code>149.112.112.10</code></li>
+          <li>DoT: <code>dns10.quad9.net</code></li>
+        </ul>
+      </div>
+
+      <!-- AdGuard -->
+      <div class="card">
+        <h3>AdGuard DNS <span class="badge">Ad Block</span></h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Filters ads, trackers, phishing, and adult sites.</p>
+
+        <span class="option-title">Option A: Standard Unfiltered</span>
+        <ul>
+          <li>IPv4: <code>94.140.14.140</code> | <code>94.140.14.141</code></li>
+        </ul>
+
+        <span class="option-title">Option B: Ads & Malware Blocked</span>
+        <ul>
+          <li>IPv4: <code>94.140.14.14</code> | <code>94.140.15.15</code></li>
+          <li>DoT: <code>dns.adguard-dns.com</code></li>
+        </ul>
+
+        <span class="option-title">Option C: Family Protection</span>
+        <ul>
+          <li>IPv4: <code>94.140.14.15</code> | <code>94.140.15.16</code></li>
+          <li>DoT: <code>family.adguard-dns.com</code></li>
+        </ul>
+      </div>
+
+      <!-- CleanBrowsing -->
+      <div class="card">
+        <h3>CleanBrowsing <span class="badge">SafeSearch</span></h3>
+        <p style="font-size: 0.85rem; color: var(--text-muted);">Specializes in enforced SafeSearch and strict content controls.</p>
+
+        <span class="option-title">Option A: Security Filter</span>
+        <ul>
+          <li>IPv4: <code>185.228.168.9</code> | <code>185.228.169.9</code></li>
+          <li>DoT: <code>security-filter.cleanbrowsing.org</code></li>
+        </ul>
+
+        <span class="option-title">Option B: Adult Filter</span>
+        <ul>
+          <li>IPv4: <code>185.228.168.10</code> | <code>185.228.169.11</code></li>
+          <li>DoT: <code>adult-filter.cleanbrowsing.org</code></li>
+        </ul>
+
+        <span class="option-title">Option C: Family Filter (Restricted YouTube)</span>
+        <ul>
+          <li>IPv4: <code>185.228.168.168</code> | <code>185.228.169.168</code></li>
+          <li>DoT: <code>family-filter.cleanbrowsing.org</code></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <div class="instructions">
+      <h2>Router Setup Instructions</h2>
+      <ol>
+        <li><strong>Access Gateway:</strong> Open your web browser and log in to your router gateway IP (typically <code>192.168.1.1</code> or <code>192.168.0.1</code>).</li>
+        <li><strong>Find Settings:</strong> Locate the <strong>WAN</strong>, <strong>Internet</strong>, or <strong>DHCP Settings</strong> menu.</li>
+        <li><strong>Set Static DNS:</strong> Switch your DNS setting mode from <em>ISP Default / Dynamic</em> to <strong>Static</strong> or <strong>Manual</strong>.</li>
+        <li><strong>Enter Addresses:</strong> Paste the Primary and Secondary IPv4/IPv6 addresses of your chosen provider tier.</li>
+        <li><strong>Enable Encrypted DNS (Optional):</strong> If your router supports <strong>DoT (DNS-over-TLS)</strong> or <strong>DoH (DNS-over-HTTPS)</strong>, paste the provider's Hostname into the DoT field.</li>
+        <li><strong>Save & Reboot:</strong> Save settings and restart your router or renew the DHCP lease on your computer.</li>
+      </ol>
+
+      <h2 style="margin-top: 2rem; font-size: 1.25rem;">Verification & Cache Flush</h2>
+      <p style="color: var(--text-muted); font-size: 0.95rem;">Clear your Windows local DNS resolver cache in PowerShell:</p>
+      <span class="code-block">ipconfig /flushdns</span>
+    </div>
+
+    <footer>
+      <p>Browser Leak Tool | Maintained by Mikesunboxing LTD</p>
+    </footer>
+  </div>
+
+</body>
+</html>
