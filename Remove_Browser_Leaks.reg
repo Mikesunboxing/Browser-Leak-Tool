@@ -1,0 +1,30 @@
+Windows Registry Editor Version 5.00
+
+; =========================================================
+; REMOVE ALL APPLIED BROWSER & SYSTEM LEAK POLICIES
+; Restores default system proxy and DNS behavior.
+; =========================================================
+
+; 1. WINDOWS SYSTEM NETWORK
+[-HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Control Panel]
+
+; 2. MOZILLA FIREFOX
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mozilla\Firefox]
+
+; 3. GOOGLE CHROME
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+
+; 4. MICROSOFT EDGE
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+
+; 5. BRAVE BROWSER
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave]
+
+; 6. VIVALDI BROWSER
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Vivaldi]
+
+; 7. OPERA BROWSER
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Opera]
+
+; 8. GENERIC CHROMIUM & DUCKDUCKGO
+[-HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Chromium]

@@ -1,0 +1,61 @@
+Windows Registry Editor Version 5.00
+
+; =========================================================
+; 1. WINDOWS SYSTEM NETWORK (MACHINE-WIDE / ALL USERS)
+; Prevents users from overriding system proxy options in Control Panel.
+; =========================================================
+[HKEY_LOCAL_MACHINE\Software\Policies\Microsoft\Internet Explorer\Control Panel]
+"Proxy"=dword:00000001
+
+; =========================================================
+; 2. MOZILLA FIREFOX (MACHINE-WIDE)
+; Forces System Proxy (5) and disables DNS-over-HTTPS (0).
+; =========================================================
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mozilla\Firefox]
+"ProxyServerMode"=dword:00000005
+
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Mozilla\Firefox\DNSOverHTTPS]
+"Enabled"=dword:00000000
+
+; =========================================================
+; 3. GOOGLE CHROME (MACHINE-WIDE)
+; =========================================================
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Google\Chrome]
+"ProxyMode"="system"
+"DnsOverHttpsMode"="off"
+
+; =========================================================
+; 4. MICROSOFT EDGE (MACHINE-WIDE)
+; =========================================================
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Microsoft\Edge]
+"ProxyMode"="system"
+"DnsOverHttpsMode"="off"
+
+; =========================================================
+; 5. BRAVE BROWSER (MACHINE-WIDE)
+; =========================================================
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\BraveSoftware\Brave]
+"ProxyMode"="system"
+"DnsOverHttpsMode"="off"
+
+; =========================================================
+; 6. VIVALDI BROWSER (MACHINE-WIDE)
+; =========================================================
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Vivaldi]
+"ProxyMode"="system"
+"DnsOverHttpsMode"="off"
+
+; =========================================================
+; 7. OPERA BROWSER (MACHINE-WIDE)
+; =========================================================
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Opera]
+"ProxyMode"="system"
+"DnsOverHttpsMode"="off"
+
+; =========================================================
+; 8. GENERIC CHROMIUM & DUCKDUCKGO WINDOWS APP (MACHINE-WIDE)
+; Catches unlisted Chromium forks and web-app wrappers.
+; =========================================================
+[HKEY_LOCAL_MACHINE\SOFTWARE\Policies\Chromium]
+"ProxyMode"="system"
+"DnsOverHttpsMode"="off"
